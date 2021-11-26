@@ -1,4 +1,4 @@
-
+require('dotenv').config();
 const inquirer = require('inquirer')
 const Web3 = require("web3")
 const HDWalletProvider = require('@truffle/hdwallet-provider')
@@ -17,9 +17,9 @@ var shibu_router_contract = ""
 var time = ""
 
 
-const API_URL = "https://eth-mainnet.alchemyapi.io/v2/thRlEKX0xoiMKQErFK9lIPDfKKWbGD3h"
-const PRIVATE_KEY = "9f6f2f94e2f16d40494a0f053d2e5c32ea344b4c4e9509dccad1ad1b74869120"
-const PUBLIC_KEY = "0xD59fcF0EaC5946b8a1fB12e6F83eAC74F2688bc2"
+const API_URL = process.env.API_URL
+const PRIVATE_KEY = process.env.PRIVATE_KEY
+const PUBLIC_KEY = process.env.PUBLIC_KEY
 const web3 = new Web3(new HDWalletProvider(PRIVATE_KEY, API_URL))
 
 
